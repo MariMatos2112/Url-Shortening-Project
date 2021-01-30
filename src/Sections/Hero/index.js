@@ -14,7 +14,7 @@ const Hero = () => {
         </p>
         <Button label="Get started" />
       </div>
-      <img src={HeroImg} alt="Hero Image" />
+      <img src={HeroImg} alt="Hero" />
     </StyledHero>
   );
 };

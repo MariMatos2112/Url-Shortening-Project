@@ -9,10 +9,10 @@ export const StyledButton = styled.button`
   width: 200px;
   font-weight: bold;
   color: white;
-  transition: all .1s;
+  transition: all 0.1s;
 
-  :hover{
-      cursor: pointer;
-      background: hsl(180, 46%, 49%);
+  :hover {
+    cursor: pointer;
+    background: hsl(180, 46%, 49%);
   }
 `;

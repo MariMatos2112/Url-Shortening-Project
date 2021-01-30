@@ -15,6 +15,7 @@ export const StyledHero = styled.div`
     height: 50%;
 
     h1 {
+      color: hsl(255, 11%, 22%);
       font-size: 3.5rem;
       line-height: 60px;
     }

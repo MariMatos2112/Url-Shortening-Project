@@ -1,12 +1,13 @@
 import styled from "styled-components";
 
 export const StyledHero = styled.div`
-  height: 100vh;
+  height: 90vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 
-  div {
+  .MainBox {
     width: 55%;
     display: flex;
     justify-content: space-around;
@@ -18,12 +19,13 @@ export const StyledHero = styled.div`
       color: hsl(255, 11%, 22%);
       font-size: 3.5rem;
       line-height: 60px;
+      margin-bottom: 10px;
     }
 
     p {
       color: hsl(0, 0%, 75%);
       font-size: 1.2rem;
-      margin-bottom: 10px;
+      margin-bottom: 35px;
     }
   }
 

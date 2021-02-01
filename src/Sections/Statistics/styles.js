@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 export const StyledStatistics = styled.div`
-  height: 100vh;
+  height: 110vh;
   background: hsl(257, 7%, 95%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 50px 0;
+  padding: 100px 0 50px 0;
   justify-content: space-between;
 
   .TextBox {

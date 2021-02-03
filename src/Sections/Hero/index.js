@@ -5,7 +5,7 @@ import ShortLinkBox from "../../Components/ShortLinkBox";
 import HeroImg from "../../Images/illustration-working.svg";
 import { StyledHero } from "./styles";
 
-const Hero = () => {
+const Hero = ({ getLink }) => {
   return (
     <StyledHero>
       <Navbar />
@@ -18,7 +18,7 @@ const Hero = () => {
         <Button label="Get started" />
       </div>
       <img src={HeroImg} alt="Hero" />
-      <ShortLinkBox />
+      <ShortLinkBox getLink={getLink} />
     </StyledHero>
   );
 };

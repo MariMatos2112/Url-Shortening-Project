@@ -21,6 +21,8 @@ export const StyledShortLinkBox = styled.form`
     border: none;
     padding: 0 20px;
     color: #8c8c8c;
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
 
     :focus {
       outline: none;
@@ -30,5 +32,9 @@ export const StyledShortLinkBox = styled.form`
   button {
     width: 18%;
     border-radius: 10px;
+
+    :focus{
+        outline: none;
+    }
   }
 `;

@@ -1,15 +1,42 @@
+import { useEffect, useState } from "react";
 import BoostLinks from "./Sections/BoostLinks";
 import Footer from "./Sections/Footer";
 import Hero from "./Sections/Hero";
 import Statistics from "./Sections/Statistics";
+import Axios from "axios";
+import ModalBox from "./Components/ModalBox";
+import useClipboard from "react-use-clipboard";
 
 function App() {
+  const [link, setLink] = useState("");
+  const [originalLink, setOriginalLink] = useState("");
+  const [isCopied, setCopied] = useClipboard(link, {
+    successDuration: 1000,
+  });
+
+  useEffect(() => {
+    Axios.get(`https://api.shrtco.de/v2/shorten?url=${link}`)
+      .then((response) => {
+        setLink(response.data.result.short_link);
+        setOriginalLink(response.data.result.original_link);
+      })
+      .catch((error) => console.log(error));
+  }, [link, originalLink]);
+
   return (
     <div>
-      <Hero />
+      <Hero getLink={(e) => setLink(e)} />
       <Statistics />
       <BoostLinks />
       <Footer />
+      {link.includes("shrtco.de") ? (
+        <ModalBox
+          originalLink={originalLink}
+          shortenedLink={link}
+          copyLink={() => setCopied(link)}
+          closeModal={() => setLink("")}
+        />
+      ) : null}
     </div>
   );
 }

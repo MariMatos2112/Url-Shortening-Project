@@ -21,6 +21,13 @@ function App() {
         setOriginalLink(response.data.result.original_link);
       })
       .catch((error) => console.log(error));
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        setLink("");
+        setOriginalLink("");
+      }
+    });
   }, [link, originalLink]);
 
   return (
@@ -29,12 +36,15 @@ function App() {
       <Statistics />
       <BoostLinks />
       <Footer />
-      {link.includes("shrtco.de") ? (
+      {link ? (
         <ModalBox
           originalLink={originalLink}
           shortenedLink={link}
           copyLink={() => setCopied(link)}
-          closeModal={() => setLink("")}
+          closeModal={() => {
+            setLink("");
+            setOriginalLink("");
+          }}
         />
       ) : null}
     </div>
